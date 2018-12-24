@@ -1,0 +1,132 @@
+body {
+  margin: 0;
+  padding: 0;
+  font-family: sans-serif;
+}
+
+.container {
+  padding: 20px;
+}
+
+.messageContainer {
+  width: 100%;
+  display: flex;
+  margin-bottom: 10px;
+}
+
+.message {
+  max-width: 400px;
+  background-color: rgb(159, 183, 204);
+  color: white;
+  padding: 10px;
+  border-radius: 8px;
+  word-break: break-all;
+}
+
+.message img {
+  max-width: 100%;
+}
+
+.single-user {
+  border-bottom: 1px solid gray;
+  padding: 10px 0;
+  display: flex;
+  align-content: center;
+  align-items: center;
+  cursor: pointer;
+  position: relative;
+}
+
+.single-user .chat-button {
+  position: absolute;
+  right: 5px;
+}
+
+.users-list {
+  max-height: 450px;
+  overflow-y: scroll;
+}
+
+.user-thumb {
+  width: 20px;
+  height: 20px;
+  background-color: rgb(225, 0, 152);
+  border-radius: 50%;
+  margin-right: 10px;
+}
+
+.input-field {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid lightgrey;
+  border-radius: 5px;
+  margin: 10px 5px 20px 5px;
+  box-sizing: border-box;
+}
+
+.input-label {
+  display: block;
+  text-align: left;
+  margin-left: 5px;
+}
+
+.input-submit {
+  text-align: center;
+  display: block;
+  width: 200px;
+  margin: 0 auto;
+  background-color: pink;
+  color: white;
+  text-decoration: none;
+  padding: 15px;
+  border: none;
+  cursor: pointer;
+  border-radius: 5px;
+  transition: .3s linear;
+}
+
+.input-submit:hover {
+  transition: .3s linear;
+  background-color: rgb(225, 0, 152);
+}
+
+.form-error {
+  padding: 15px;
+  background-color: rgb(225, 0, 152);
+  color: white;
+  width: 25%;
+  margin: 30px auto 0;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+.ReactModal__Overlay--after-open {
+  background-color: rgba(0, 0, 0, 0.65) !important;
+}
+
+.modal-add-users {
+  padding: 5px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.default-button {
+  border: none;
+  background-color: rgb(225, 0, 152);
+  color: white;
+  padding: 5px;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.ml-15 {
+  margin-left: 15px;
+}
+
+.mr-15 {
+  margin-right: 15px;
+}
+
+/* .modal-add-users:hover {
+  background: rgba(0, 0, 0, 0.15)
+} */
