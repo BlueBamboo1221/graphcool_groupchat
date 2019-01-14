@@ -21,7 +21,7 @@ class App extends Component {
       <ApolloProvider client={this.props.client}>
         <Router history={history}>
             <div className="app-container">
-                <Header title="GraphQL Chat App" />
+                <Header title="" />
                 <Switch>
                     <Route exact path='/' component={Welcome} />
                     <Route exact path='/signin' component={SignIn} />

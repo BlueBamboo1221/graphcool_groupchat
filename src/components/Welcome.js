@@ -24,7 +24,7 @@ const styles = {
         display: 'block',
         width: "200px",
         margin: '0 auto',
-        backgroundColor: 'rgb(225, 0, 152)',
+        backgroundColor: 'rgb(0, 128, 255)',
         color: 'white',
         textDecoration: 'none',
         padding: '15px',

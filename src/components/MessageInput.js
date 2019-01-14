@@ -88,7 +88,7 @@ class MessageInput extends Component {
                     value={this.state.description}
                     onChange={e => this.setState({description: e.target.value})} />
 
-                <input type="file" accept="image/*" onChange={this.onChange} />
+
                 
                 <button 
                     style={styles.submitBtn} 
@@ -115,8 +115,9 @@ const styles = {
     },
     submitBtn: {
         width                   : '8%',
+        height                  : '50px',
         border                  : 'none',
-        backgroundColor         : 'rgb(225, 0, 152)',
+        backgroundColor         : 'rgb(0, 128, 255)',
         color                   : 'white',
         borderRadius            : '5px',
         boxSizing               : 'border-box',

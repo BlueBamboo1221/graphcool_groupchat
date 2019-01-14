@@ -44,7 +44,7 @@ class Register extends Component {
         let { email, password, passwordConfirm, name, error } = this.state;
         return (
             <div className='container'>
-                <h2 style={{textAlign: 'center'}}>Register User</h2>
+                <h2 style={{textAlign: 'center'}}>Sign Up User</h2>
                 <form style={{width: '25%', margin: '0 auto'}} onSubmit={e => this.handleSubmit(e, email, password, name)}>
                     <div>
                         <label className='input-label' htmlFor="name">Name:</label>

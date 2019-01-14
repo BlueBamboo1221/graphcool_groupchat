@@ -6,7 +6,7 @@ export default class Header extends Component {
     signOut = () => {
         localStorage.clear();
         this.forceUpdate();
-        // this.props.history.push('/')
+
     }
     render() {
         return (
@@ -15,7 +15,7 @@ export default class Header extends Component {
                 {(localStorage.getItem('token') == null) ? 
                 <div>
                     <Link style={styles.linkStyle} to='/signin'>Sign In</Link>
-                    <Link style={styles.linkStyle} to='/register'>Register</Link>
+                    <Link style={styles.linkStyle} to='/register'>Sign Up</Link>
                 </div> :
                 <Link onClick={this.signOut} style={styles.linkStyle} to='/signin'>Sign Out</Link>
             }
@@ -27,7 +27,7 @@ export default class Header extends Component {
 const styles = {
     header: {
         width: '100%',
-        backgroundColor: '#E10098',
+        backgroundColor: '#0080ff',
         color: 'white',
         padding: '20px',
         boxShadow: '0 0 3px gray',

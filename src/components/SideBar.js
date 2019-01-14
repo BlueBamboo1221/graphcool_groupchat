@@ -47,11 +47,6 @@ class SideBar extends Component {
         return(
             <div style={styles.sidebar}>
 
-                <div style={styles.sidebarRoomsHead}>
-                    <h3>Rooms:</h3>
-                    <button className="default-button" onClick={() => this.setState({modalIsOpen: true})}>Add new</button>
-                </div>
-
                 <Modal
                         isOpen={this.state.modalIsOpen}
                         contentLabel="Add Room"
@@ -118,7 +113,7 @@ const styles = {
         height                  : 20,
         border                  : 'none',
         position                : 'relative',
-        background              : 'rgb(225, 0, 152)'
+        background              : 'rgb(0, 128, 255)'
     },
     userModalCloseIcon: {
         position                : 'absolute',

@@ -49,21 +49,7 @@ class Message extends Component {
 
                 {files !== undefined ? <a href={files.url} target="_blank"><img alt={files.url} src={files.url} /></a> : ''}
 
-                <div className="message-buttons">
-                    <button 
-                        style={styles.edit}
-                        onClick={() => this.setState({editMessage: true})}
-                    >
-                        Edit
-                    </button>
 
-                    <button
-                        style={styles.delete}
-                        onClick={() => this.props.chatStore.deletePost(id)} 
-                    >
-                        Delete
-                    </button>
-                </div>
             </div>
         </div>
     )

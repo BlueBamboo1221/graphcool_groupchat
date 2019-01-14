@@ -76,7 +76,7 @@ class MessageContainer extends Component {
     showLoader = (size) => {
         return (
             <div style={{display: "flex", justifyContent: "center", alignItems: "center", height: "100%"}}>
-                <Loader type="Puff" color="rgb(225, 0, 152)" height={size} width={size} />
+                <Loader type="Puff" color="rgb(0, 128, 255)" height={size} width={size} />
             </div>
         )
     }
@@ -93,34 +93,7 @@ class MessageContainer extends Component {
 
         console.log(this.props.chatStore.roomName);
 
-        if (roomId !== defaultRoomId && roomId !== '') {
-            return (
-                <div>
-                    <button className="default-button mr-15" onClick={() => this.openModal()}>
-                        Add users
-                    </button>
 
-                    <button className="default-button mr-15" onClick={() => this.setState(
-                        prevState => ({editRoom: !prevState.editRoom}))}
-                    >
-                        Change name
-                    </button>
-
-                    <button className="default-button mr-15" onClick={() => {
-                        leaveRoom(currentUserID, roomId);
-                        changeRoom(defaultRoomId, defaultRoomName);
-                    }}>
-                        Leave Room
-                    </button>
-
-                    <button className="default-button" onClick={() => {
-                        this.openDeleteModal()
-                    }}>
-                        Delete conversation
-                    </button>
-                </div>
-            )
-        }
     }
 
     render() {
@@ -205,95 +178,8 @@ class MessageContainer extends Component {
 
                     <MessageInput />
 
-                    <Modal
-                        isOpen={this.state.modalIsOpen}
-                        contentLabel="Add Users"
-                        style={customStyles}
-                    >
-                        <div style={styles.userModalHeader}>
-                            <h3 style={{margin: 0}}>Add users to Room:</h3>
-                            <button
-                                style={styles.userModalClose}
-                                onClick={this.closeModal}
-                            >
-                                <span style={styles.userModalCloseIcon}>+</span>
+   
 
-                            </button>
-                        </div>
-
-                        {usersRoomMembersLoading && this.showLoader(30)}
-                        
-                        <h4>Users in room:</h4>
-                        <div style={styles.userModalList}>
-                            {usersRoomMembers.map(user => {
-                            return(
-                                <User
-                                    id={user.id}
-                                    key={user.id}
-                                    name={user.name}
-                                    btnName="Remove"
-                                    btnClick={() => {
-                                        this.props.chatStore.leaveRoom(user.id, this.props.chatStore.roomId)
-                                    }}
-                                />
-                            )
-                            })}
-                        </div>
-
-                        {usersNotRoomMembersLoading && this.showLoader(30)}
-                        
-                        <h4>Users not in room:</h4>
-                        <div style={styles.userModalList}>
-                            
-                            {usersNotRoomMembers.map(user => {
-                            return(
-                                <User
-                                    id={user.id}
-                                    key={user.id}
-                                    name={user.name}
-                                    btnName="Add User"
-                                    btnClick={() => {
-                                        this.props.chatStore.addUserInRoom(user.id, this.props.chatStore.roomId)
-                                    }}
-                                />
-                            )
-                            })}
-                        </div>
-                        <br/>
-                        
-                    </Modal>
-
-                    <Modal
-                        isOpen={this.state.deleteModalIsOpen}
-                        contentLabel="Add Users"
-                        style={customStyles}
-                    >
-                        <div>
-                            <div style={styles.userModalHeader}>
-                                <h3 style={{margin: 0}}>Are You Really want to delete room?</h3>
-                                <button
-                                    style={styles.userModalClose}
-                                    onClick={this.closeDeleteModal}
-                                >
-                                    <span style={styles.userModalCloseIcon}>+</span>
-                                </button>
-                            </div>
-
-                            <button
-                                className="default-button mr-15"
-                                onClick={() => {
-                                    this.props.chatStore.deleteRoom(roomId);
-                                    this.props.chatStore.changeRoom(this.props.chatStore.defaultRoomId, defaultRoomName);
-                                    this.closeDeleteModal()
-                                }}
-                            >Delete</button>
-                            <button
-                                className="default-button"
-                                style={{background: 'white', color: 'black', border: '1px solid lightgray'}}
-                                onClick={() => this.closeDeleteModal()}
-                            >Cancel</button>
-                        </div>
-                    </Modal>
                 </div>
             )
         }
@@ -344,7 +230,7 @@ const styles = {
         height                  : 20,
         border                  : 'none',
         position                : 'relative',
-        background              : 'rgb(225, 0, 152)'
+        background              : 'rgb(0, 128, 255)'
     },
     userModalCloseIcon: {
         position                : 'absolute',
@@ -360,7 +246,7 @@ const styles = {
     },
     userModalSubmit: {
         border                  : 'none',
-        background              : 'rgb(225, 0, 152)',
+        background              : 'rgb(0, 128, 255)',
         color                   : 'white',
         padding                 : '5px',
         cursor                  : 'pointer'

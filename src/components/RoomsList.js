@@ -6,7 +6,7 @@ const RoomsList = inject('chatStore')(observer(props => {
     if (props.chatStore.roomsLoading) {
         return (
             <div style={{display: "flex", justifyContent: "center"}}>
-                <Loader type="Puff" color="rgb(225, 0, 152)" height={30} width={30} />
+                <Loader type="Puff" color="rgb(0, 128, 255)" height={30} width={30} />
             </div>
         )
     }
